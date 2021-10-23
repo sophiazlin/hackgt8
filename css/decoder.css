@@ -1,7 +1,7 @@
 .decoder{
     display: flex block;
     background-image: url("../images/decoderCookbookBackground.jpg");
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center top;
@@ -32,12 +32,12 @@
 }
 
 #recipe {
-    padding-left: 550px;
-    padding-right: 550px;
+    padding-left: 10.75%;
+    padding-right: 10.75%;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
     color:white;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 textarea {
@@ -80,8 +80,7 @@ input:hover{
     background: black;
 }
 #recipeInput {
-    display:flex block;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
 }
 #instructionsContainer{
     padding-top: 100px;

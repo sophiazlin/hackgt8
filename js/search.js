@@ -7,13 +7,14 @@ function searchClick() {
 
 $(document).ready(function() {
     $('#searchBar').keyup(function(event) {
-        console.log('hi');
         if (event.key === "Enter") {
-            console.log('hi2');
             var input = document.getElementById('searchBar');
-            if (input.value.indexOf(' ') < 0 /* && input.value is in keywords*/){
+            if (true /* if input.value is in keywords*/){
                 sessionStorage.setItem('keyword', input.value);
                 window.location.href = 'searchResult.html';
+            }
+            else {
+                document.getElementById('error').innerText = 'keyword not found';
             }
         }
     })

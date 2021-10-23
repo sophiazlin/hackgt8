@@ -1,6 +1,9 @@
-const keywords = ["soft peaks", "stiff peaks", "sift", "fold"];
-//var input = sessionStorage.getItem('input');
-var input = "In a separate large bowl, beat the egg whites and the remaining 1/2 teaspoon of salt with an electric hand mixer until soft peaks form. Gradually add the granulated sugar until fully incorporated. Continue to beat until stiff peaks form (you should be able to turn the bowl upside down without anything falling out)."
+const keywords = [["soft peaks", "../images/keywords/softPeaks.jpeg"], 
+                ["stiff peaks", "../images/keywords/stiffPeaks.jpeg"], 
+                ["fold", "../images/keywords/fold.jpeg"], 
+                ["sift", "../images/keywords/sift.jpeg"]];
+sessionStorage.setItem('keywords', JSON.stringify(keywords));
+var input = sessionStorage.getItem('input');
 
 function decoder(input) {
     var str = input.toLowerCase();
@@ -8,15 +11,14 @@ function decoder(input) {
     for (let i = 0; i < keywords.length; i++) {
         var start = 0;
         while(start <= str.length) {
-            var index = str.indexOf(keywords[i], start);
+            var index = str.indexOf(keywords[i][0], start);
             if(index != -1) {
                 if (index == 0 || str.charAt(index - 1).match(/([_\W])/)) {
-                    if(indexMap.get(keywords[i]) != undefined) {
-                        indexMap.get(keywords[i]).push(index);
+                    if(indexMap.get(keywords[i][0]) != undefined) {
+                        indexMap.get(keywords[i][0]).push(index);
                     } else {
-                        indexMap.set(keywords[i], [index]);
-                    }
-                
+                        indexMap.set(keywords[i][0], [index]);
+                    } 
                 }
                 start = index + 1;
             } else {
@@ -70,10 +72,10 @@ function showRecipe(inputArray) {
     for (let i = 0; i < inputArray.length; i++) {
         let newWord = inputArray[i];
         for (let j = 0; j < keywords.length; j++) {
-            if (inputArray[i] == keywords[j]) {
-                newWord = '<span onmouseover=\"alert(\'' + keywords[j] + '\');\">' + inputArray[i] + '</span>';
+            if (inputArray[i] == keywords[j][0]) {
+                newWord = '<span onmouseover=\"alert(\'' + keywords[j][0] + '\');\">' + inputArray[i] + '</span>';
             }
-        }
+       }
         textContent += newWord;
     }
     

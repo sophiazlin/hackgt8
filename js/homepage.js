@@ -4,6 +4,7 @@ var indexMap;
 document.addEventListener('click', event => {
     if (event.target.id == 'submit') {
         input = $("#input").val();
+        input = input.replace(/\n/g, '<br/>')
         sessionStorage.setItem("input", input)
         window.location.href = "decoder.html";
     }

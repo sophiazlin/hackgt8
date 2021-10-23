@@ -71,6 +71,20 @@ input {
     font-size: 20px;
     color: black;
 }
+
+#error {
+    padding-top: 10px;
+    width: 78%;
+    resize: none;
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
 .center {
     justify-content: center;
 }

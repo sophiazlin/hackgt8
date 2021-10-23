@@ -12,8 +12,8 @@ nav {
     height: 20px;
     z-index: 999999;
     font-family: 'Montserrat', sans-serif; 
-    transition: background 0.1s linear, opacity 0.3s linear; /* transitions */
-    -webkit-transition: background 0.1s linear, opacity 0.3s linear;
+    transition: background 0.3s linear, opacity 0.3s linear;
+    -webkit-transition: background 0.3s linear, opacity 0.3s linear;
 }
 nav ul {
     list-style-type: none;
@@ -22,10 +22,25 @@ nav ul {
     text-align: center;
     letter-spacing: 0.2em;
     font-weight: 200;
+    color:white;
+    transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
 }
 nav ul a {
     text-decoration: none;
     color:white;
+    transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+}
+
+.left {
+    float: left;
+}
+nav.main ul li img {
+    height: 25px;
+    width: auto;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .sticky{

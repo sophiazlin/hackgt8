@@ -66,13 +66,12 @@ inputArray = inputArray.reverse();
 console.log(inputArray);
 
 function showRecipe(inputArray) {
-    var array = [];
     var textContent = "";
     for (let i = 0; i < inputArray.length; i++) {
         let newWord = inputArray[i];
         for (let j = 0; j < keywords.length; j++) {
             if (inputArray[i] == keywords[j]) {
-                newWord = '<span>' + inputArray[i] + '</span>';
+                newWord = '<span onmouseover=\"alert(\'' + keywords[j] + '\');\">' + inputArray[i] + '</span>';
             }
         }
         textContent += newWord;

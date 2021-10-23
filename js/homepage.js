@@ -1,6 +1,9 @@
+var input;
+
 document.addEventListener('click', event => {
     if (event.target.id == 'submit') {
-        console.log("HI");
+        input = $("#input").val();
+        console.log(input)
     }
 })
 

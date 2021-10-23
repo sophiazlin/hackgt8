@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Recipe Decoder</title>
-        <link rel="stylesheet" type="text/css" href="css/decoder.css">
+        <title>Keyword Search</title>
+        <link rel="stylesheet" type="text/css" href="css/search.css">
         <link rel="stylesheet" type="text/css" href="css/nav.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap" rel="stylesheet">
@@ -13,25 +13,24 @@
                 <li class="tab"><a href="decoder.html">DECODER</a></li>
                 <li class="tab"><a href="fonts.html">FONTS</a></li>
                 <li class="tab"><a href="colors.html">COLORS</a></li>
-                <li class="tab"><a href="search.html">SEARCH</a></li>
+                <li class="tab"><a class="current" href="search.html">SEARCH</a></li>
                 <li class="tab"><a href="homepage.html">HOME</a></li>
             </ul>
         </nav>  
 
     </head>
-    <body class="decoder">
+    <body class="search">
         <div class="titleStrip">
             <h1 id="title">RECIPE DECODER</h1>
-            <h2 id="subtitle">Understanding Your Recipe</h2>
+            <h2 id="subtitle">search for keywords</h2>
+        </div>
+
+        <div>
+            <input id='searchBar' type='text' value='type in keyword here' onClick='searchClick()'>
         </div>
         
-        <div class="center" id="recipeInput">
-            <p id="recipe" class="center" cols="70" rows="30"></p>
-        </div>
-
     </body>
     
-    <script type="text/javascript" src="js/homepage.js"></script>
-    <script type="text/javascript" src="js/decoder.js"></script>
-
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
 </html>

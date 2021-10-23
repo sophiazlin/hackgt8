@@ -10,6 +10,17 @@
     -webkit-transition: background 1s linear, opacity 0.3s linear;
 }
 
+.titleStrip{ /* big title strip section (picture) */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: color;
+    height: 775px;
+    width: 100%;
+    text-align: center;
+    background-attachment: fixed;   
+    margin-top: 0px;
+}
+
 #title {
     margin: 14px;
     padding-top: 17.5%;
@@ -32,12 +43,17 @@
 }
 
 .instructions {
-    padding-left: 550px;
-    padding-right: 550px;
+    padding-left: 10.75%;
+    padding-right: 10.75%;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
     color:black;
-    font-size: 14px;
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.subInstructions {
+    font-size: 20px;
 }
 
 textarea {
@@ -80,7 +96,7 @@ input:hover{
 }
 #recipeInput {
     display:flex block;
-    padding-bottom: 50px;
+    padding-bottom: 75px;
 }
 #instructionsContainer{
     padding-top: 100px;
@@ -98,3 +114,18 @@ input:hover{
     display: inline;
 }
 
+.arrow {
+    border: solid white;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    margin-top: 125px;
+    padding: 25px;
+}
+.arrow:hover {
+    border: solid rgba(255, 255, 255, 0.5);
+    border-width: 0 1px 1px 0;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

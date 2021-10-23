@@ -4,40 +4,35 @@ var indexMap;
 document.addEventListener('click', event => {
     if (event.target.id == 'submit') {
         input = $("#input").val();
-        indexMap = decoder(input);
         sessionStorage.setItem("input", input)
         window.location.href = "decoder.html";
     }
 })
 
-function decoder(input) {
-    const keywords = ["soft peaks", "stiff peaks", "sift", "fold"];
-    var str = input.toLowerCase();
-    const indexMap = new Map();
-    for (let i = 0; i < keywords.length; i++) {
-        var start = 0;
-        while(start <= str.length) {
-            var index = str.indexOf(keywords[i], start);
-            if(index != -1) {
-                if (index == 0 || str.charAt(index - 1).match(/([_\W])/)) {
-                    if(indexMap.get(keywords[i]) != undefined) {
-                        indexMap.get(keywords[i]).push(index);
-                    } else {
-                        indexMap.set(keywords[i], [index]);
-                    }
-                
-                }
-                start = index + 1;
-            } else {
-            break;
-            }
-        }
+function inputClick() {
+    var input = document.getElementById('input');
+    if (input.value == "Please type your recipe in here!") {
+        input.value = "";
     }
-    return indexMap;
-}
+}  
 
 var trans = false;                 // false = above transition; true = below transition
 var transMotion = false;            // false = not in motion; true = in motion
+
+function arrowClick() {
+    if (!transMotion){                          //if screen not in motion
+        if (!trans){                           //if above transition
+            transMotion = true;             //in motion
+            $("html, body").clearQueue().finish();      //finish all other events (just in case)
+            $("html, body").animate({scrollTop: $("#recipeContainer").offset().top+100}, 1000)    //move past transition
+
+            setTimeout(function(){
+                transMotion=false;          //once transition is finished, set motion to false
+            }, 1000)
+            trans=true;                    //set past trans1
+        }
+    }
+}
 
 $(window).scroll(function() {
     var height = $(window).scrollTop();         //how far the page has been scrolled

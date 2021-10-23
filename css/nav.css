@@ -33,6 +33,10 @@ nav ul a {
     top: 0;
 }
 
+.current {
+    border-bottom: 1px solid rgba(255, 255, 255, 255);
+}
+
 nav.main li{
     padding-left: 25px;
     padding-right: 25px;
@@ -57,15 +61,4 @@ nav.main li a:active{
 }
 .tab {
     float: right;
-}
-
-.titleStrip{ /* big title strip section (picture) */
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: color;
-    height: 775px;
-    width: 100%;
-    text-align: center;
-    background-attachment: fixed;   
-    margin-top: 0px;
 }

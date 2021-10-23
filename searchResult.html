@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Recipe Decoder</title>
-        <link rel="stylesheet" type="text/css" href="css/decoder.css">
+        <title>Search Result</title>
+        <link rel="stylesheet" type="text/css" href="css/searchResult.css">
         <link rel="stylesheet" type="text/css" href="css/nav.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap" rel="stylesheet">
@@ -19,19 +19,24 @@
         </nav>  
 
     </head>
-    <body class="decoder">
+    <body class="search">
         <div class="titleStrip">
             <h1 id="title">RECIPE DECODER</h1>
-            <h2 id="subtitle">Understanding Your Recipe</h2>
+            <h2 id="subtitle"></h2>
+        </div>
+
+        <!--
+        <div>
+            insert info on keyword
+        </div>
+        -->
+
+        <div>
+            <input id='searchBar' type='text' value='search for another keyword' onClick='searchClick()'>
         </div>
         
-        <div class="center" id="recipeInput">
-            <p id="recipe" class="center" cols="70" rows="30"></p>
-        </div>
-
     </body>
     
-    <script type="text/javascript" src="js/homepage.js"></script>
-    <script type="text/javascript" src="js/decoder.js"></script>
-
+    <script type="text/javascript" src="js/searchResult.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
 </html>

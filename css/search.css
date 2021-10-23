@@ -1,13 +1,24 @@
-.decoder{
+.search{
     display: flex block;
-    background-image: url("../images/decoderCookbookBackground.jpg");
-    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("../images/searchBookBackground.jpg");
+    background-color: rgba(0, 0, 0, 0.75);
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
     transition: background 1s linear, opacity 0.3s linear; /* transitions */
     -webkit-transition: background 1s linear, opacity 0.3s linear;
+}
+
+.titleStrip{ /* big title strip section (picture) */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: color;
+    height: 450px;
+    width: 100%;
+    text-align: center;
+    background-attachment: fixed;   
+    margin-top: 0px;
 }
 
 #title {
@@ -31,19 +42,24 @@
     color:white;
 }
 
-#recipe {
-    padding-left: 550px;
-    padding-right: 550px;
+.instructions {
+    padding-left: 10.75%;
+    padding-right: 10.75%;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
-    color:white;
-    font-size: 14px;
+    color:black;
+    font-size: 30px;
+    margin-top: 0px;
 }
 
-textarea {
-    background-color:rgba(0, 0, 0, 0.75);
+.subInstructions {
+    font-size: 20px;
+}
+
+input {
+    background-color: white;
     outline-color: black;
-    height: 350px;
+    height: 10px;
     width: 75%;
     resize: none;
     margin: auto;
@@ -53,40 +69,8 @@ textarea {
     padding: 25px;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    color: white;
+    color: black;
 }
-
-textarea:focus, input:focus{
-    outline: 0;
-}
-
-input {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: black;
-    color: white;
-    border-width: 0px;
-}
-input:hover{
-    text-decoration: underline white 1px;
-    transition: all 0.1s ease-in-out;
-    -webkit-transition: all 0.1s ease-in-out;
-}
-
-#recipeContainer{
-    background: black;
-}
-#recipeInput {
-    display:flex block;
-    padding-bottom: 50px;
-}
-#instructionsContainer{
-    padding-top: 100px;
-}
-
 .center {
     justify-content: center;
 }
@@ -99,6 +83,3 @@ input:hover{
     display: inline;
 }
 
-span {
-    text-decoration: underline;
-}

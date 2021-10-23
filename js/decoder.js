@@ -1,7 +1,7 @@
-const keywords = [["soft peaks", "../images/keywords/softPeaks.jpeg"], 
-                ["stiff peaks", "../images/keywords/stiffPeaks.jpeg"], 
-                ["fold", "../images/keywords/fold.jpeg"], 
-                ["sift", "../images/keywords/sift.jpeg"]];
+const keywords = [["soft peaks", "images/keywords/softPeaks.jpg"], 
+                ["stiff peaks", "images/keywords/stiffPeaks.jfif"], 
+                ["fold", "images/keywords/fold.jpg"], 
+                ["sift", "images/keywords/sift.jpg"]];
 sessionStorage.setItem('keywords', JSON.stringify(keywords));
 var input = sessionStorage.getItem('input');
 
@@ -73,7 +73,7 @@ function showRecipe(inputArray) {
         let newWord = inputArray[i];
         for (let j = 0; j < keywords.length; j++) {
             if (inputArray[i] == keywords[j][0]) {
-                newWord = '<span onmouseover=\"alert(\'' + keywords[j][0] + '\');\">' + inputArray[i] + '</span>';
+                newWord = '<span onmouseover=\"popup(this, ' + j + ')\" onmouseout=\"popupOff()\">' + inputArray[i] + '</span>';
             }
        }
         textContent += newWord;
@@ -83,3 +83,16 @@ function showRecipe(inputArray) {
 }
 
 showRecipe(inputArray);
+
+function popup(word, index) {
+    console.log(word);
+    y = $(word).offset().top;
+    x = $(word).offset().left;
+    $('#popup').css({'top':y-150, 'left':x, 'z-index':'99', 'opacity':'1'});
+    document.getElementById('popupImage').src = keywords[index][1];
+    
+}
+
+function popupOff() {
+    $('#popup').css({'z-index':'-1', 'opacity':'0'});
+}

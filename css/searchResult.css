@@ -14,7 +14,7 @@
     background-size: cover;
     background-position: center;
     background-blend-mode: color;
-    height: 450px;
+    height: 250px;
     width: 100%;
     text-align: center;
     background-attachment: fixed;   
@@ -97,3 +97,10 @@ input {
     display: inline;
 }
 
+.keyword {
+    block-size: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

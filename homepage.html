@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/nav.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/homepage.js"></script>
+        <script type="text/javascript" src="js/nav.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i&display=swap" rel="stylesheet">
         <nav class="main sticky" id="mainNav">
@@ -23,22 +24,23 @@
     <body class="homepage">
         <div class="titleStrip">
             <h1 id="title">RECIPE DECODER</h1>
-            <h2 id="subtitle">Understanding Your Recipe</h2>
-
-            <p class="instructions">Welcome to the Recipe Decoder!</p>
-            <p class="instructions">Input your recipe into the text box below to learn what it means.</p>
-            <ul class="instructions">
-                <li>Some information</li>
-                <li>About how to use</li>
-                <li>Our website</li>
-            </ul>
+            <h2 id="subtitle">understanding your recipe</h2>
         </div>
 
-        <div class="center" id="ovenContainer">
-            <div class="center" id="oven">
+        <div class="center vertical" id="recipeContainer">
+            <div id="instructionsContainer">
+                <p class="instructions">Welcome to the Recipe Decoder!</p>
+                <p class="instructions">Input your recipe into the text box below to learn what it means.</p>
+                <ul class="instructions">
+                    <li>Some information</li>
+                    <li>About how to use</li>
+                    <li>Our website</li>
+                </ul>
+            </div>
+            <div class="center" id="recipeInput">
                 <textarea id="input" class="center" cols="70" rows="30">Please type your recipe in here!</textarea>
                 <br/>
-                <input type="submit" id="submit"/>
+                <input type="submit" id="submit" value="SUBMIT"/>
             </div>
         </div>
         

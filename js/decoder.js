@@ -1,4 +1,4 @@
-const keywords = [
+var keywords = [
     ["bouquet garni", "images/keywords/bouquetGarni.jpg"],
     ["dice", "images/keywords/dice.jfif"],
     ["fold", "images/keywords/fold.jpg"],
@@ -87,7 +87,6 @@ function showRecipe(inputArray) {
        }
         textContent += newWord;
     }
-    
     document.getElementById('recipe').innerHTML = textContent;
 }
 

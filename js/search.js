@@ -1,4 +1,15 @@
-keywords = JSON.parse(sessionStorage.getItem('keywords'));
+const keywords = [
+    ["bouquet garni", "images/keywords/bouquetGarni.jpg"],
+    ["dice", "images/keywords/dice.jfif"],
+    ["fold", "images/keywords/fold.jpg"],
+    ["julienne", "images/keywords/julienne.jpg"],
+    ["mince", "images/keywords/mince.jpg"],
+    ["poach", "images/keywords/poach.jpg"],
+    ["sift", "images/keywords/sift.jpg"],
+    ["soft peaks", "images/keywords/softPeaks.jpg"],
+    ["stiff peaks", "images/keywords/stiffPeaks.jfif"],
+    ["zest", "images/keywords/zest.jpg"]
+];
 
 function searchClick() {
     var input = document.getElementById('searchBar');
@@ -23,7 +34,7 @@ $(document).ready(function() {
                     window.location.href = 'searchResult.html';
                     break;
                 }
-                else if (i == keywords.length-1) {
+                else if (i >= keywords.length-1) {
                     document.getElementById('error').innerText = 'keyword not found';
                 }
             }

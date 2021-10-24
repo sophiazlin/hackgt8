@@ -14,7 +14,7 @@
     background-size: cover;
     background-position: center;
     background-blend-mode: color;
-    height: 250px;
+    height: 350px;
     width: 100%;
     text-align: center;
     background-attachment: fixed;   
@@ -72,6 +72,10 @@ input {
     color: black;
 }
 
+.search {
+    margin-bottom: 50px;
+}
+
 #error {
     padding-top: 10px;
     width: 78%;
@@ -102,5 +106,14 @@ input {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
     width: 50%;
+}
+
+#keyimg {
+    text-align:center;
+    display:block;
+    margin:auto;
+    max-height: 400px;
+    max-width: 600px;
 }

@@ -96,3 +96,48 @@ input {
     display: inline;
 }
 
+#list1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    display:block;
+    margin:auto;
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+    font-size: 30px;
+    font-weight: 395;
+}
+
+#list2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    display:block;
+    margin:auto;
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+    font-size: 30px;
+    font-weight: 395;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row {
+    background-color: white;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.square {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}

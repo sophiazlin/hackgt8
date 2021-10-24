@@ -1,7 +1,14 @@
 const keywords = [["soft peaks", "images/keywords/softPeaks.jpg"], 
                 ["stiff peaks", "images/keywords/stiffPeaks.jfif"], 
                 ["fold", "images/keywords/fold.jpg"], 
-                ["sift", "images/keywords/sift.jpg"]];
+                ["sift", "images/keywords/sift.jpg"],
+                ["dice", "images/keywords/dice.jfif"],
+                ["bouquet garni", "images/keywords/bouquetGarni.jpg"],
+                ["julienne", "images/keywords/julienne.jpg"],
+                ["mince", "images/keywords/mince.jpg"],
+                ["poach", "images/keywords/poach.jpg"],
+                ["zest", "images/keywords/zest.jpg"]
+            ];
 sessionStorage.setItem('keywords', JSON.stringify(keywords));
 var input = sessionStorage.getItem('input');
 

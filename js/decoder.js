@@ -1,14 +1,16 @@
-const keywords = [["soft peaks", "images/keywords/softPeaks.jpg"], 
-                ["stiff peaks", "images/keywords/stiffPeaks.jfif"], 
-                ["fold", "images/keywords/fold.jpg"], 
-                ["sift", "images/keywords/sift.jpg"],
-                ["dice", "images/keywords/dice.jfif"],
-                ["bouquet garni", "images/keywords/bouquetGarni.jpg"],
-                ["julienne", "images/keywords/julienne.jpg"],
-                ["mince", "images/keywords/mince.jpg"],
-                ["poach", "images/keywords/poach.jpg"],
-                ["zest", "images/keywords/zest.jpg"]
-            ];
+const keywords = [
+    ["bouquet garni", "images/keywords/bouquetGarni.jpg"],
+    ["dice", "images/keywords/dice.jfif"],
+    ["fold", "images/keywords/fold.jpg"],
+    ["julienne", "images/keywords/julienne.jpg"],
+    ["mince", "images/keywords/mince.jpg"],
+    ["poach", "images/keywords/poach.jpg"],
+    ["sift", "images/keywords/sift.jpg"],
+    ["soft peaks", "images/keywords/softPeaks.jpg"],
+    ["stiff peaks", "images/keywords/stiffPeaks.jfif"],
+    ["zest", "images/keywords/zest.jpg"]
+];
+
 sessionStorage.setItem('keywords', JSON.stringify(keywords));
 var input = sessionStorage.getItem('input');
 
@@ -79,7 +81,7 @@ function showRecipe(inputArray) {
     for (let i = 0; i < inputArray.length; i++) {
         let newWord = inputArray[i];
         for (let j = 0; j < keywords.length; j++) {
-            if (inputArray[i] == keywords[j][0]) {
+            if (inputArray[i].toLowerCase() == keywords[j][0]) {
                 newWord = '<span onmouseover=\"popup(this, ' + j + ')\" onmouseout=\"popupOff()\">' + inputArray[i] + '</span>';
             }
        }
@@ -93,8 +95,8 @@ showRecipe(inputArray);
 
 function popup(word, index) {
     console.log(word);
-    y = $(word).offset().top;
-    x = $(word).offset().left;
+    var y = $(word).offset().top;
+    var x = $(word).offset().left;
     $('#popup').css({'top':y-150, 'left':x, 'z-index':'99', 'opacity':'1'});
     document.getElementById('popupImage').src = keywords[index][1];
     
@@ -102,4 +104,25 @@ function popup(word, index) {
 
 function popupOff() {
     $('#popup').css({'z-index':'-1', 'opacity':'0'});
+}
+
+function checkSelection(obj) {
+    var selection = window.getSelection().toString();
+    if (selection.replace(/\n+/g, '') != "") {
+        searchImage(selection);
+    }
+    else {
+        $('#popup').css({'z-index':'-1', 'opacity':'0'});
+    }
+}
+
+function removeSelection() {
+    $('#popup').css({'z-index':'-1', 'opacity':'0'});
+}
+
+function setImage(imgUrl) {
+    var y = window.getSelection().getRangeAt(0).getBoundingClientRect().top;
+    var x = window.getSelection().getRangeAt(0).getBoundingClientRect().left;
+    document.getElementById('popupImage').src = imgUrl;
+    $('#popup').css({'top':y-150, 'left':x, 'z-index':'99', 'opacity':'1'});
 }

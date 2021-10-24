@@ -17,14 +17,14 @@
         </nav>  
 
     </head>
-    <body class="decoder">
+    <body class="decoder" onMouseUp='removeSelection()'>
         <div class="titleStrip">
             <h1 id="title">RECIPE DECODER</h1>
             <h2 id="subtitle">your recipe breakdown</h2>
         </div>
         
         <div class="center" id="recipeInput">
-            <p id="recipe" class="center" cols="70" rows="30"></p>
+            <p id="recipe" class="center" rows='70' cols='30' onMouseUp='checkSelection(this)'></p>
             <p id="popup"><img id="popupImage"></p>
         </div>
 
@@ -33,5 +33,6 @@
     <script type="text/javascript" src="js/homepage.js"></script>
     <script type="text/javascript" src="js/decoder.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
+    <script type="text/javascript" src="js/imageSearch.js"></script>
 
 </html>

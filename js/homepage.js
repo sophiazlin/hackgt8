@@ -17,6 +17,13 @@ function inputClick() {
     }
 }  
 
+function inputClickOff() {
+    var input = document.getElementById('input');
+    if (input.value.replace(/\s+/g, '') == "") {
+        input.value = "Please type your recipe in here!";
+    }
+}  
+
 var trans = false;                 // false = above transition; true = below transition
 var transMotion = false;            // false = not in motion; true = in motion
 

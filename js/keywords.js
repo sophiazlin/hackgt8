@@ -9,7 +9,7 @@ for (let i = 0; i < keywords.length; i++) {
     img[i] = document.createElement('img');
     img[i].className = "square";
     img[i].src = keywords[i][1];
-    if (i < (keywords.length / 2)) {
+    if (i % 2 == 0) {
         document.getElementById('list1').appendChild(word[i]);
         document.getElementById('list1').appendChild(img[i]);
     } else {
